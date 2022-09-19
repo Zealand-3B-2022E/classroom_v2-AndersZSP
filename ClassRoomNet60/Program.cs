@@ -13,12 +13,14 @@ internal class Program
         Studerende jonathan = new Studerende("Jonathan Elberg", 1999, 7);
         Studerende alexander = new Studerende("Alexander Gerdil", 1996, 8);
         Studerende runi = new Studerende("Runi Bjartalið", 1989, 2);
+        Studerende fejl = new Studerende("Fejl tjek", 1999, 14);
 
         List<Studerende> StuderendeListe = new List<Studerende>();
         StuderendeListe.Add(anders);
         StuderendeListe.Add(jonathan);
         StuderendeListe.Add(alexander);
         StuderendeListe.Add(runi);
+        StuderendeListe.Add(fejl);
 
         Console.WriteLine($"{klasseRum}");
 

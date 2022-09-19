@@ -36,6 +36,7 @@ namespace ClassRoomNet60
             get { return _fødselsmåned; }
             set
             {
+                CheckMonth(value);
                 _fødselsmåned = value;
             }
         }
@@ -47,6 +48,10 @@ namespace ClassRoomNet60
 
         public Studerende(string navn, int fødselsår, int fødselsmåned)
         {
+            if(fødselsmåned < 1 || fødselsmåned > 12)
+            {
+                throw new ArgumentOutOfRangeException("Ugyldig fødselsmåned");
+            }
             _navn = navn;
             _fødselsår = fødselsår;
             _fødselsmåned = fødselsmåned;
@@ -77,6 +82,14 @@ namespace ClassRoomNet60
             else
             {
                 return null;
+            }
+        }
+
+        private void CheckMonth(int fødselsmåned)
+        {
+            if(fødselsmåned > 12 || fødselsmåned < 1)
+            {
+                throw new ArgumentException(message:"Fødselsmåned skal være mellem 1 og 12");
             }
         }
 
